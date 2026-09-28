@@ -1,0 +1,271 @@
+<!doctype html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+
+  <meta name="theme-color" content="#f7f6f2">
+
+  <title>本屋にも、次回予約を。</title>
+
+  <meta
+    name="description"
+    content="読み終わるころに、次の一冊と本屋で会うための次回予約サイト。"
+  >
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <main class="app-shell">
+
+    <!-- ロゴ -->
+    <header class="hero">
+      <img
+        class="campaign-logo"
+        src="./assets/logo.png"
+        alt="本屋にも、次回予約を。"
+      >
+    </header>
+
+    <!-- 今までに購入した本 -->
+    <section
+      class="books-section"
+      aria-labelledby="history-title"
+    >
+
+      <h2
+        class="section-label"
+        id="history-title"
+      >
+        今までにあなたが購入した本
+      </h2>
+
+      <div class="books-strip">
+
+        <div
+          class="book-slider"
+          id="bookSlider"
+          aria-label="購入した本の一覧"
+        >
+
+          <!-- 1冊目 -->
+          <article class="book-card">
+
+            <div class="cover cover-indigo">
+
+              <img
+                src="./assets/books/book-01.jpg"
+                alt="『夜は短し歩けよ乙女』の表紙"
+              >
+
+              <span class="cover-placeholder">
+                夜は短し<br>
+                歩けよ乙女
+              </span>
+
+            </div>
+
+            <p>夜は短し歩けよ乙女</p>
+
+          </article>
+
+          <!-- 2冊目 -->
+          <article class="book-card">
+
+            <div class="cover cover-red">
+
+              <img
+                src="./assets/books/book-02.jpg"
+                alt="『裸の心』の表紙"
+              >
+
+              <span class="cover-placeholder">
+                裸の心
+              </span>
+
+            </div>
+
+            <p>裸の心</p>
+
+          </article>
+
+          <!-- 3冊目 -->
+          <article class="book-card">
+
+            <div class="cover cover-blue">
+
+              <img
+                src="./assets/books/book-03.jpg"
+                alt="『推し、燃ゆ』の表紙"
+              >
+
+              <span class="cover-placeholder">
+                推し、燃ゆ
+              </span>
+
+            </div>
+
+            <p>推し、燃ゆ</p>
+
+          </article>
+
+          <!-- 4冊目 -->
+          <article class="book-card">
+
+            <div class="cover cover-cream">
+
+              <img
+                src="./assets/books/book-04.jpg"
+                alt="『コンビニ人間』の表紙"
+              >
+
+              <span class="cover-placeholder">
+                コンビニ人間
+              </span>
+
+            </div>
+
+            <p>コンビニ人間</p>
+
+          </article>
+
+        </div>
+
+        <!-- スライド下の丸 -->
+        <div
+          class="slider-dots"
+          id="sliderDots"
+          aria-hidden="true"
+        ></div>
+
+      </div>
+
+    </section>
+
+    <!-- 次回予約日 -->
+    <section
+      class="date-section"
+      aria-labelledby="date-title"
+    >
+
+      <h2
+        class="section-label"
+        id="date-title"
+      >
+        おすすめの次回予約日
+      </h2>
+
+      <p
+        class="wheel-guide"
+        id="rouletteStatus"
+        aria-live="polite"
+      >
+        読み終わるころを計算しています
+      </p>
+
+      <div class="date-wheel-wrap">
+
+        <div
+          class="date-wheel"
+          id="dateWheel"
+          role="listbox"
+          aria-label="自動で選ばれるおすすめの次回予約日"
+        ></div>
+
+        <div
+          class="wheel-focus"
+          aria-hidden="true"
+        ></div>
+
+      </div>
+
+    </section>
+
+    <!-- おすすめの本 -->
+    <section
+      class="recommend-section"
+      aria-labelledby="recommend-title"
+    >
+
+      <h2
+        class="section-label"
+        id="recommend-title"
+      >
+        おすすめの本
+      </h2>
+
+      <article class="recommend-card">
+
+        <div class="recommend-cover cover-cream">
+
+          <img
+            src="./assets/books/recommend.jpg"
+            alt="おすすめの本『女生徒』の表紙"
+          >
+
+          <span class="cover-placeholder">
+            女生徒<br>
+            太宰治
+          </span>
+
+        </div>
+
+        <h3>
+          『女生徒』
+          <small>太宰治</small>
+        </h3>
+
+        <blockquote>
+          「おやすみなさい。私は、王子さまのいないシンデレラ姫。
+          あたし、東京の、どこにいるか、ごぞんじですか？」
+        </blockquote>
+
+      </article>
+
+      <!-- 本を探すボタン -->
+      <button
+        class="search-button"
+        id="searchButton"
+        type="button"
+      >
+
+        <!-- 虫眼鏡 -->
+        <svg
+          class="search-icon"
+          viewBox="0 0 24 24"
+          aria-hidden="true"
+        >
+          <circle
+            cx="10.7"
+            cy="10.7"
+            r="6.8"
+          ></circle>
+
+          <path d="m15.8 15.8 5 5"></path>
+        </svg>
+
+        次回予約する本を探す
+
+      </button>
+
+      <p
+        class="selection-message"
+        id="selectionMessage"
+        aria-live="polite"
+      ></p>
+
+    </section>
+
+  </main>
+
+  <script src="./script.js"></script>
+
+</body>
+</html>
